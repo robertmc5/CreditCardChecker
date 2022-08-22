@@ -25,11 +25,12 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 // Validate credit card number using Luhn algorithm
 const validateCred = array => {
+  let copyArray = array.slice();  // just to make extra sure the original cc#s are not mutated
   let doubleDigit = 0;
   let sum = 0;
-  for (let i = array.length - 1; i >= 0; i -= 2) {
+  for (let i = copyArray.length - 1; i >= 0; i -= 2) {
     if (i != 0) {
-      doubleDigit = array[i-1] * 2;
+      doubleDigit = copyArray[i-1] * 2;
       if (doubleDigit > 9) {
         doubleDigit -= 9;
       }
@@ -37,7 +38,7 @@ const validateCred = array => {
     else {
       doubleDigit = 0;
     }
-    sum += array[i] + doubleDigit;
+    sum += copyArray[i] + doubleDigit;
   }
   if (sum % 10 === 0) {
     return true;
@@ -58,3 +59,26 @@ console.log(validateCred(valid4));
 console.log(validateCred(invalid4));
 console.log(validateCred(valid5));
 console.log(validateCred(invalid5));
+
+// Determine which card numbers are invalid
+const findInvalidCards = array => {
+  let invalidCCs = [];
+  for (let card of array) {
+    let copyCC = card.slice();  // just to make extra sure the original cc#s are not mutated
+    if (!validateCred(copyCC)) {
+      invalidCCs.push(copyCC);
+    }
+  }
+  return invalidCCs;
+}
+
+// TEST
+console.log("Invalid cards:");
+let invalidCardNumbers = findInvalidCards(batch);
+for (let card of invalidCardNumbers ) {
+  console.log(`\t[${card.join(', ')}]`);
+}
+console.log('---------------');
+// for (let cc of batch) {  // TEST if original cards had mutated
+//   console.log(cc);
+// }
