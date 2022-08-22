@@ -73,8 +73,8 @@ const findInvalidCards = array => {
 }
 
 // TEST
-console.log("Invalid cards:");
 let invalidCardNumbers = findInvalidCards(batch);
+console.log(invalidCardNumbers.length + " Invalid cards:");
 for (let card of invalidCardNumbers ) {
   console.log(`\t[${card.join(', ')}]`);
 }
@@ -82,3 +82,40 @@ console.log('---------------');
 // for (let cc of batch) {  // TEST if original cards had mutated
 //   console.log(cc);
 // }
+
+// Identify card companies with invalid cards
+
+const idInvalidCardCompanies = array => {
+  let companies = [];
+  for (let card of array) {
+    let copyCC = card.slice();  // just to make extra sure the original cc#s are not mutated
+    switch (copyCC[0]) {
+      case 3: if (!companies.includes('Amex')) {
+        companies.push('Amex');
+        }
+        break;
+      case 4: if (!companies.includes('Visa')) {
+        companies.push('Visa');
+        }
+        break;
+      case 5: if (!companies.includes('Mastercard')) {
+        companies.push('Mastercard');
+        }
+        break;
+      case 6: if (!companies.includes('Discover')) {
+        companies.push('Discover');
+        }
+        break;
+      default: companies.push('Company not found');
+    }
+  }
+  return companies;
+}
+
+// TEST
+let invalidCardCompanies = idInvalidCardCompanies(invalidCardNumbers);
+console.log("Invalid companies:");
+for (let co of invalidCardCompanies) {
+  console.log(`\t${co}`);
+}
+console.log('---------------');
