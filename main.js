@@ -37,10 +37,8 @@ const validateCred = array => {
     else {
       doubleDigit = 0;
     }
-    console.log(array[i], doubleDigit);   // TEST
     sum += array[i] + doubleDigit;
   }
-  console.log(sum);                      // TEST
   if (sum % 10 === 0) {
     return true;
   }
