@@ -81,12 +81,13 @@ const findInvalidCards = array => {
 }
 
 // Print list of invalid cards
+console.log('---------------------------');
 let invalidCardNumbers = findInvalidCards(batch);
 console.log("There are " + invalidCardNumbers.length + " Invalid cards:");
 for (let card of invalidCardNumbers ) {
-  console.log(`\t[${card.join(', ')}]`);
+  console.log(`\t${card.join('')}`);
 }
-console.log('------------------');
+console.log('---------------------------');
 
 // Determine which card companies had invalid cards
 const idInvalidCardCompanies = array => {
@@ -118,8 +119,8 @@ const idInvalidCardCompanies = array => {
 
 // Print list of card companies with invalid cards
 let invalidCardCompanies = idInvalidCardCompanies(invalidCardNumbers);
-console.log("Invalid companies:");
+console.log("The Invalid card companies are:");
 for (let co of invalidCardCompanies) {
   console.log(`\t${co}`);
 }
-console.log('------------------');
+console.log('---------------------------');
