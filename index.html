@@ -12,7 +12,7 @@
   <header>
     <h1>Credit Card Validator</h1>
   </header>
-  <section>
+  <section id="intro">
     <h2>The Luhn Algorithm</h2>
     <p>To find out if a credit card number is valid or not, we can use the 
       <a target="_blank" href="https://en.wikipedia.org/wiki/Luhn_algorithm">Luhn algorithm</a>.</p>
@@ -21,6 +21,59 @@
     <p class="white">&nbsp;&nbsp;&nbsp;&nbsp;used to validate certain identification numbers, e.g. credit card numbers.</p>
     <p>A visual representation of the algorithm can be seen 
       <a target="_blank" href="https://content.codecademy.com/PRO/independent-practice-projects/credit-card-checker/diagrams/cc%20validator%20diagram%201.svg?_gl=1*45djc0*_ga*MjI2Mjg0MDg5Mi4xNjU4MTI1MTIx*_ga_3LRZM6TM9L*MTY2MDk0NjQ4NS44NS4xLjE2NjA5NDY1MjQuMjEuMC4w">here</a>.</p>
+    <p class="white">More sample credit card numbers can be found 
+      <a target="_blank" class="white" href="https://www.freeformatter.com/credit-card-number-generator-validator.html">here</a>.</p>
+  </section>
+  <section id="checker">
+    <h2>Enter a credit card number to see if it's valid or invalid.</h2>
+    <h3>You can copy and paste examples shown below, or manually enter any number you'd like.</h3>
+    <form>
+      <label for="cc-number">Card Number </label>
+      <input type="number" id="cc-number">
+      <button type="button">Enter</button>
+    </form>
+    <div id="all-numbers">
+      <div class="sample-numbers">
+        <h3>Valid card numbers</h3>
+        <p>4539677908016808</p>
+        <p>5535766768751439</p>
+        <p>371612019985236</p>
+        <p>6011144340682905</p>
+        <p>4539404967869666</p>
+      </div>
+      <div class="sample-numbers">
+        <h3>Invalid card numbers</h3>
+        <p>4532778771091795</p>
+        <p>5795593392134643</p>
+        <p>375796084459914</p>
+        <p>6011127961777935</p>
+        <p>5382019772883854</p>
+      </div>
+      <div class="sample-numbers">
+        <h3>Mystery card numbers</h3>
+        <p>344801968305414</p>
+        <p>5466100861620239</p>
+        <p>6011377020962656203</p>
+        <p>4929877169217093</p>
+        <p>4913540463072523</p>
+      </div>
+      <div class="sample-numbers">
+        <h3>Mystery card numbers</h3>
+        <p>5515679577659243</p>
+        <p>36515352603380</p>
+        <p>3530626940842243</p>
+        <p>30210381075868</p>
+        <p>4844002026502441</p>
+      </div>
+      <div class="sample-numbers">
+        <h3>Mystery card numbers</h3>
+        <p>6385603134303562</p>
+        <p>6759311704576331</p>
+        <p>373658576762888</p>
+        <p>5128023292143359</p>
+        <p>4806589363633594</p>
+      </div>
+    </div>
   </section>
 </body>
 </html>
