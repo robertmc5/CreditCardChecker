@@ -1,0 +1,58 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@300;400;500;600;700&display=swap');
+
+/* Universal */
+* {
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+  padding: 0;
+}
+
+body {
+  background-color: cornflowerblue;
+  color: yellow;
+  font-family: 'Anek Telugu', sans-serif;
+}
+
+/* Header */
+header {
+  background-color: mediumblue;
+  padding: 1.5rem;
+  text-align: center;
+  border-bottom: thin solid yellow;
+}
+
+/* Sections */
+section {
+  padding: 1rem;
+  line-height: 1.5;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+h2 {
+  font-weight: 500;
+}
+
+h2, p {
+  text-shadow: 1px 1px 1px mediumblue;
+}
+
+a {
+  color: gold;
+  font-weight: 500;
+}
+
+a:hover {
+  color: orange;
+}
+
+/* Classes */
+.white {
+  color: white;
+}
