@@ -61,10 +61,19 @@ const printResults = () => {
 }
 
 // Register event listener for clicking the Validate button
-document.querySelector('button').addEventListener('click', printResults);
+document.getElementById('go').addEventListener('click', printResults);
 
 // Register event listener for pressing the Enter key
 const checkEnterKey = event => {
   if (event.key === 'Enter') printResults();
 }
 document.getElementById('cc-number').addEventListener('keydown', checkEnterKey);
+
+// Clear button function
+const clearField = () => {
+  document.getElementById('cc-number').value = '';
+  document.getElementById('result').innerHTML = '';
+}
+
+// Register event listener for pressing the Clear button
+document.getElementById('clear').addEventListener('click', clearField);
