@@ -69,9 +69,8 @@ form {
 
 #output {
   position: absolute;
-  bottom: 50%;
-  left: 5%;
-  transform: translateY(60%);
+  bottom: 5%;
+  left: 12%;
 }
 
 input {

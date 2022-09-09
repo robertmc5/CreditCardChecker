@@ -40,19 +40,22 @@ const printResults = () => {
     answer.innerHTML = '';
   }
   if ((!isNaN(inputValue)) && (inputValue !== '')) {
-    let phrase = "The card number is ";
     let result = document.createElement('p');
     result.id = 'output';
     if (validateCC(convertNumbers(inputValue))) {
-      result.innerHTML = `${phrase} <span>VALID</span>`;
-      result.firstElementChild.style.color = 'mediumseagreen';
+      result.innerHTML = "VALID";
+      result.style.color = 'mediumseagreen';
     }
     else {
-      result.innerHTML = `${phrase} <span>INVALID</span>`;
-      result.firstElementChild.style.color = 'red';
+      result.innerHTML = "INVALID";
+      result.style.color = 'red';
     }
-    result.firstElementChild.style.fontSize = '2.5rem';
-    result.firstElementChild.style.fontWeight = '700';
+    result.style.fontSize = '1.25rem';
+    result.style.fontWeight = '700';
+    result.style.transition = 'font-size 0.5s';
+    setTimeout(() => {
+      result.style.fontSize = '2.5rem';
+    }, 10)
     answer.appendChild(result);
   }
 }
