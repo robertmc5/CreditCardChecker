@@ -60,11 +60,25 @@ form {
   padding: 0.5rem 0;
 }
 
+#result {
+  box-sizing: border-box;
+  height: 5rem;
+  font-size: 1.25rem;
+  position: relative;
+}
+
+#output {
+  position: absolute;
+  bottom: 50%;
+  left: 5%;
+  transform: translateY(60%);
+}
+
 input {
   padding: 0.25rem;
   margin: 0 0.5rem;
   font-size: 1rem;
-  -moz-appearance:textfield;
+  -moz-appearance: textfield;
 }
 
 input::-webkit-inner-spin-button, 
@@ -86,12 +100,12 @@ button {
 }
 
 button:hover {
-  box-shadow: inset -0.5rem -0.5rem 1rem goldenrod;
+  box-shadow: inset -0.5rem -0.5rem 1.5rem goldenrod;
   cursor: pointer;
 }
 
 button:active {
-  box-shadow: inset 0.5rem 0.5rem 1rem orangered;
+  box-shadow: inset 0.5rem 0.5rem 2rem orangered;
 }
 
 /* Classes and IDs */
@@ -103,7 +117,6 @@ button:active {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 2rem;
 }
 
 .sample-numbers {
