@@ -35,8 +35,9 @@ const validateCC = array => {
 // Invoke validation function and print the results on the web page
 const printResults = () => {
   let inputValue = document.getElementById('cc-number').value.trim();
-  if (document.getElementById('result').innerHTML !== '') {
-    document.getElementById('result').innerHTML = '';
+  let answer = document.getElementById('result');
+  if (answer.innerHTML !== '') {
+    answer.innerHTML = '';
   }
   if ((!isNaN(inputValue)) && (inputValue !== '')) {
     let phrase = "The card number is ";
@@ -52,9 +53,15 @@ const printResults = () => {
     }
     result.firstElementChild.style.fontSize = '2.5rem';
     result.firstElementChild.style.fontWeight = '700';
-    document.getElementById('result').appendChild(result);
+    answer.appendChild(result);
   }
 }
 
 // Register event listener for clicking the Validate button
 document.querySelector('button').addEventListener('click', printResults);
+
+// Register event listener for pressing the Enter key
+const checkEnterKey = event => {
+  if (event.key === 'Enter') printResults();
+}
+document.getElementById('cc-number').addEventListener('keydown', checkEnterKey);
